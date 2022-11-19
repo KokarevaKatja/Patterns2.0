@@ -5,6 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selenide.$;
@@ -60,7 +61,7 @@ public class AuthorizationTest {
     @DisplayName("Should get error message if wrong login")
     void shouldDisplayErrorIfWrongLogin() {
         var registeredUser = getRegisteredUser("active");
-        String wrongLogin = getRandomLogin();
+        var wrongLogin = getRandomLogin();
 
         $("[data-test-id=login] input").setValue(wrongLogin);
         $("[data-test-id=password] input").setValue(registeredUser.getPassword());
